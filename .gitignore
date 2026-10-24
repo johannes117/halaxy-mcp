@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+*.log
+.env
+.env.*
+# Never commit anything that could hold real patient data
+/attachments/
+*.jsonl

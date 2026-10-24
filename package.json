@@ -1,0 +1,54 @@
+{
+  "name": "halaxy-mcp",
+  "version": "1.0.0",
+  "description": "Local MCP server for reading and safely writing to a single Halaxy practice account.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "halaxy-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johannes117/halaxy-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "halaxy",
+    "fhir",
+    "model-context-protocol"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:it": "HALAXY_IT=1 vitest run test/integration",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@napi-rs/keyring": "2.1.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@types/node": "20.19.43",
+    "eslint": "9.39.5",
+    "prettier": "3.9.10",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.0",
+    "vitest": "4.1.12"
+  }
+}
